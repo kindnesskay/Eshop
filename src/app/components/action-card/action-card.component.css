@@ -1,0 +1,41 @@
+.action-card {
+  height: 130px;
+  border-radius: 10px;
+  background-color: rgb(37, 34, 34);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.5s;
+  flex-grow: 1;
+}
+.action-card:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+
+.action-card:hover button {
+  cursor: pointer;
+  background-color: white;
+}
+.title {
+  font-weight: 700;
+}
+.text {
+  font-size: 13px;
+}
+button {
+  transition: all 0.5s;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: blue;
+  border: 4px solid rgb(138, 133, 133);
+}
+button:hover {
+  cursor: pointer;
+  background-color: white;
+}

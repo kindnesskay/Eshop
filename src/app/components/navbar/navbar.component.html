@@ -1,0 +1,26 @@
+<nav>
+  <p>Sports <span>Apparel</span></p>
+  <button
+    class="menu-btn"
+    [ngClass]="display ? 'hide-btn' : 'show-btn'"
+    (click)="openMenu()"
+  >
+    <img [src]="menu_open_icon" alt="menu" />
+  </button>
+
+  <div class="menu" [ngClass]="display ? 'open_menu' : 'close_menu'">
+    <button
+      class="menu-btn"
+      (click)="closeMenu()"
+      [ngClass]="display ? 'show-btn' : 'hide-btn'"
+    >
+      <img [src]="menu_close_icon" alt="menu" />
+    </button>
+    <ul class="menu-content">
+      <li class="menu-item">Home</li>
+      <li class="menu-item">About</li>
+      <li class="menu-item">Categories</li>
+    </ul>
+    <button class="shop-button">Shop</button>
+  </div>
+</nav>
