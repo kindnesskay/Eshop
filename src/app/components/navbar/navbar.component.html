@@ -17,10 +17,12 @@
       <img [src]="menu_close_icon" alt="menu" />
     </button>
     <ul class="menu-content">
-      <li class="menu-item">Home</li>
-      <li class="menu-item">About</li>
-      <li class="menu-item">Categories</li>
+      <li class="menu-item" (click)="closeMenu()" routerLink="">Home</li>
+      <li class="menu-item" (click)="closeMenu()" routerLink="">About</li>
+      <li class="menu-item" (click)="closeMenu()">Categories</li>
     </ul>
-    <button class="shop-button">Shop</button>
+    <button class="shop-button" (click)="closeMenu()" routerLink="shop">
+      Shop
+    </button>
   </div>
 </nav>
