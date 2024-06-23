@@ -1,0 +1,28 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: fit-content;
+  gap: 15px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 400px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 300px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
