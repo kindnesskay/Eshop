@@ -1,4 +1,4 @@
-<section>
+<article class="">
   <div class="product-main" *ngIf="product">
     <div class="product-image">
       <img src="{{ product.imageUrl }}" alt="{{ product.title }}" />
@@ -9,14 +9,26 @@
         <p class="product-description">{{ product.description }}</p>
       </div>
 
-      <div class="product-actions">
-        <div class="product-quantity">
-          <button>-</button>
-          <p>1</p>
-          <button>+</button>
+      <div class="flex flex-col justify-around gap-5 h-1/2">
+        <div class="flex gap-1 w-32 items-center justify-between">
+          <button
+            (click)="handleDecrease()"
+            class="w-10 h-10 p-1 flex items-center justify-center bg-orange-500 border-none text-white rounded-md font-bold text-xl cursor-pointer"
+          >
+            -
+          </button>
+          <p class="flex-1 text-xl font-bold text-center">{{ quantity() }}</p>
+          <button
+            (click)="handleIncrease()"
+            class="w-10 h-10 p-1 flex items-center justify-center bg-orange-500 border-none text-white rounded-md font-bold text-xl cursor-pointer"
+          >
+            +
+          </button>
         </div>
-        <button class="add-to-cart">Add to cart</button>
+        <button (click)="handleAddToCart()" class="add-to-cart bg-white">
+          Add to cart
+        </button>
       </div>
     </div>
   </div>
-</section>
+</article>

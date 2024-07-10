@@ -1,14 +1,22 @@
-<nav>
-  <p>Sports <span>Apparel</span></p>
-  <button
-    class="menu-btn"
-    [ngClass]="display ? 'hide-btn' : 'show-btn'"
-    (click)="openMenu()"
+<nav
+  class="h-16 w-screen text-white flex justify-between items-center relative max-w-7xl px-4"
+>
+  <div class="flex pl-2 items-center gap-4">
+    <button
+      class="w-12 h-12 hidden"
+      [ngClass]="display ? 'hide-btn' : 'show-btn'"
+      (click)="openMenu()"
+    >
+      <img [src]="menu_open_icon" alt="menu" />
+    </button>
+    <p routerLink="" class="cursor-pointer max-sm:text-lg text-xl font-bold">
+      Sports <span class="text-orange-500">Apparel</span>
+    </p>
+  </div>
+  <div
+    class="menu flex items-center gap-4"
+    [ngClass]="display ? 'open_menu' : 'close_menu'"
   >
-    <img [src]="menu_open_icon" alt="menu" />
-  </button>
-
-  <div class="menu" [ngClass]="display ? 'open_menu' : 'close_menu'">
     <button
       class="menu-btn"
       (click)="closeMenu()"
@@ -16,13 +24,23 @@
     >
       <img [src]="menu_close_icon" alt="menu" />
     </button>
-    <ul class="menu-content">
+    <ul class="flex gap-4 list-none max-sm:flex-col">
       <li class="menu-item" (click)="closeMenu()" routerLink="">Home</li>
       <li class="menu-item" (click)="closeMenu()" routerLink="">About</li>
       <li class="menu-item" (click)="closeMenu()">Categories</li>
     </ul>
-    <button class="shop-button" (click)="closeMenu()" routerLink="shop">
+    <button
+      class="w-20 border-none bg-blue-800 p-3 cursor-pointer rounded-xl max-sm:rounded-l-none max-sm:rounded-2xl max-sm:w-32"
+      (click)="closeMenu()"
+      routerLink="shop"
+    >
       Shop
     </button>
   </div>
+  <button class="p-4 w-fit" (click)="handleOpenPannel()">
+    Cart
+    <span class="bg-orange-500 font-bold p-1 rounded-2xl">
+      {{ cartService.cartTotal() }}
+    </span>
+  </button>
 </nav>

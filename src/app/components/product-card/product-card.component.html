@@ -1,10 +1,13 @@
-<div class="product-card" [routerLink]="'/shop/' + product.id">
+<div
+  class="rounded-xl h-[450px] w-full cursor-pointer gap-1 flex flex-col p-3 border border-orange-400"
+  [routerLink]="'/shop/' + product._id"
+>
   <div class="product-image">
     <img src="{{ product.imageUrl }}" alt="{{ product.title }}" />
   </div>
-  <div class="product-details">
-    <p class="name">{{ product.title }}</p>
+  <div class="p-2 flex flex-col h-28">
+    <p class="text-xl">{{ product.title }}</p>
     <p class="price">{{ product.price }}</p>
   </div>
-  <button>Add to cart</button>
+  <button class="bg-orange-400 w-full p-4 rounded-lg">Add to cart</button>
 </div>

@@ -1,6 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +15,11 @@ export class NavbarComponent {
   display = false;
   menu_open_icon = '/assets/menu.svg';
   menu_close_icon = '/assets/close.svg';
+  cartService = inject(CartService);
 
+  handleOpenPannel() {
+    this.cartService.cartPannel.set(true);
+  }
   handleMenuClick() {
     this.display = !this.display;
     // change menu image on click

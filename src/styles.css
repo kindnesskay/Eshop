@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --primary: orangered;
 }
@@ -14,6 +17,8 @@
   font-family: Montserrat;
   src: url("/assets/Montserrat-Medium.otf"), format("truetype");
 }
+html {
+}
 body {
   background-color: black;
   color: #fff;
@@ -21,9 +26,10 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: Montserrat;
+  width: 100vw;
+  overflow: hidden;
   height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+  height: 100svh;
 }
 img {
   height: auto;
@@ -32,12 +38,10 @@ img {
   max-width: 100%;
 }
 main {
-  width: 100%;
-  display: flex;
-  max-width: 1400px;
-  min-height: 100%;
 }
-
+section {
+  @apply w-full max-w-7xl p-4;
+}
 h1,
 h2 {
   font-family: Montserrat-bold;
@@ -50,4 +54,8 @@ p {
 }
 .blue-text {
   color: blue;
+}
+
+.red-border {
+  border: 1px solid red;
 }

@@ -1,4 +1,18 @@
 <app-navbar></app-navbar>
-<main>
-  <router-outlet> </router-outlet>
+
+<main class="w-full flex gap-2 h-full overflow-hidden">
+  <aside class=""></aside>
+  <article class="flex-1 max-h-full h-full overflow-y-auto">
+    <router-outlet> </router-outlet>
+  </article>
+  <aside
+    [ngClass]="{
+      'max-sm:-translate-x-full': !cartService.cartPannel(),
+      'max-sm:translate-x-0': cartService.cartPannel()
+    }"
+    class="w-1/3 max-h-full h-full overflow-y-scroll overflow-x-hidden max-sm:absolute max-sm:w-full transition-transform"
+  >
+    <app-cart />
+  </aside>
 </main>
+<app-footer />
