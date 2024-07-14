@@ -12,7 +12,7 @@ import { CartComponent } from '../cart/cart.component';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  display = false;
+  display = true;
   menu_open_icon = '/assets/menu.svg';
   menu_close_icon = '/assets/close.svg';
   cartService = inject(CartService);

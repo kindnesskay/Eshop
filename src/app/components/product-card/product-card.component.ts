@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Iproduct } from '../../../interfaces/product.interface';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -11,4 +12,9 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductCardComponent {
   @Input({ required: true }) product!: Iproduct;
+  cartService = inject(CartService);
+  handleAddToCart() {
+    if (!this.product) return;
+    this.cartService.add(this.product);
+  }
 }

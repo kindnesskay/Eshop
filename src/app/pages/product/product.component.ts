@@ -32,7 +32,6 @@ export class ProductComponent {
     if (!this.product) return;
     this.cartService.add(this.product);
   }
-
   constructor() {
     this.route.params.subscribe((param) => {
       this.id = param['id'];

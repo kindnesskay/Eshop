@@ -5,23 +5,20 @@ nav p {
 .menu-item {
   cursor: pointer;
 }
-.menu-btn {
-  display: none;
-}
+
 @media screen and (max-width: 600px) {
   nav {
     padding: 0;
   }
   .menu {
     font-family: Montserrat-bold;
-    @apply transition-all pt-5 bg-black gap-2 top-16 w-full h-screen items-start justify-start flex-col absolute;
+    @apply transition-all p-5  gap-2 top-16 w-full h-screen items-start justify-start flex-col absolute bg-slate-800;
   }
   .menu-content {
     flex-direction: column;
     gap: 10px;
   }
   .menu-item {
-    @apply cursor-pointer transition-colors p-3 bg-orange-400 rounded-2xl rounded-l-none w-32 hover:bg-orange-500;
   }
 
   .shop-button:hover {

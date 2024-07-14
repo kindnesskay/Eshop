@@ -1,46 +1,49 @@
-<nav
-  class="h-16 w-screen text-white flex justify-between items-center relative max-w-7xl px-4"
->
-  <div class="flex pl-2 items-center gap-4">
-    <button
-      class="w-12 h-12 hidden"
-      [ngClass]="display ? 'hide-btn' : 'show-btn'"
-      (click)="openMenu()"
-    >
-      <img [src]="menu_open_icon" alt="menu" />
-    </button>
-    <p routerLink="" class="cursor-pointer max-sm:text-lg text-xl font-bold">
-      Sports <span class="text-orange-500">Apparel</span>
-    </p>
-  </div>
-  <div
-    class="menu flex items-center gap-4"
-    [ngClass]="display ? 'open_menu' : 'close_menu'"
+<header class="w-screen flex justify-center fixed h-16 z-20">
+  <nav
+    class="h-16 w-full max-w-7xl flex justify-between items-center relative px-4 bg-slate-800 text-white"
   >
-    <button
-      class="menu-btn"
-      (click)="closeMenu()"
-      [ngClass]="display ? 'show-btn' : 'hide-btn'"
+    <div class="flex pl-2 items-center gap-4">
+      <button
+        class="w-12 h-12 hidden"
+        [ngClass]="display ? 'hide-btn' : 'show-btn'"
+        (click)="openMenu()"
+      >
+        <img [src]="menu_open_icon" alt="menu" />
+      </button>
+      <p routerLink="" class="cursor-pointer max-sm:text-lg text-xl font-bold">
+        Sports <span class="text-orange-500">Apparel</span>
+      </p>
+    </div>
+    <div
+      class="menu flex items-center gap-4"
+      [ngClass]="display ? 'open_menu' : 'close_menu'"
     >
-      <img [src]="menu_close_icon" alt="menu" />
+      <div class="hidden max-sm:flex w-full justify-end">
+        <button
+          class="w-10 h-10"
+          (click)="closeMenu()"
+          [ngClass]="display ? 'show-btn' : 'hide-btn'"
+        >
+          <img [src]="menu_close_icon" alt="menu" />
+        </button>
+      </div>
+
+      <div>
+        <ul class="flex gap-4 list-none max-sm:flex-col">
+          <li class="menu-item" (click)="closeMenu()" routerLink="">Home</li>
+          <li class="menu-item" (click)="closeMenu()" routerLink="">About</li>
+          <li class="menu-item" (click)="closeMenu()">Categories</li>
+          <li class="menu-item" (click)="closeMenu()" routerLink="shop">
+            Shop
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button class="p-4 w-fit" (click)="handleOpenPannel()">
+      Cart
+      <span class="bg-orange-500 font-bold p-1 rounded-2xl">
+        {{ cartService.cartTotal() }}
+      </span>
     </button>
-    <ul class="flex gap-4 list-none max-sm:flex-col">
-      <li class="menu-item" (click)="closeMenu()" routerLink="">Home</li>
-      <li class="menu-item" (click)="closeMenu()" routerLink="">About</li>
-      <li class="menu-item" (click)="closeMenu()">Categories</li>
-    </ul>
-    <button
-      class="w-20 border-none bg-blue-800 p-3 cursor-pointer rounded-xl max-sm:rounded-l-none max-sm:rounded-2xl max-sm:w-32"
-      (click)="closeMenu()"
-      routerLink="shop"
-    >
-      Shop
-    </button>
-  </div>
-  <button class="p-4 w-fit" (click)="handleOpenPannel()">
-    Cart
-    <span class="bg-orange-500 font-bold p-1 rounded-2xl">
-      {{ cartService.cartTotal() }}
-    </span>
-  </button>
-</nav>
+  </nav>
+</header>

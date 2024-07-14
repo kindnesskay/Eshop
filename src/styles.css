@@ -20,14 +20,11 @@
 html {
 }
 body {
-  background-color: black;
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: Montserrat;
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
   height: 100vh;
   height: 100svh;
 }
@@ -37,10 +34,9 @@ img {
   max-width: 100%;
   max-width: 100%;
 }
-main {
-}
+
 section {
-  @apply w-full max-w-7xl p-4;
+  @apply w-full max-w-7xl;
 }
 h1,
 h2 {
