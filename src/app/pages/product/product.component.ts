@@ -4,6 +4,7 @@ import { Iproduct } from '../../../interfaces/product.interface';
 import { NgIf } from '@angular/common';
 import { ManageDataService } from '../../services/manage-data.service';
 import { CartService } from '../../services/cart.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-product',
@@ -38,6 +39,10 @@ export class ProductComponent {
     });
     effect(() => {
       if (this.id) {
+        if (environment.production) {
+          this.product = this.manageDataService.getOne(this.id);
+        }
+
         this.manageDataService.fetchOne(this.id).subscribe({
           next: (res) => {
             this.product = res;

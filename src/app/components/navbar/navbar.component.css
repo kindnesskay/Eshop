@@ -3,26 +3,20 @@ nav p {
 }
 
 .menu-item {
-  cursor: pointer;
+  @apply flex flex-col gap-1 cursor-pointer;
+}
+.menu-item:hover span {
+  @apply bg-orange-500;
 }
 
-@media screen and (max-width: 600px) {
-  nav {
-    padding: 0;
-  }
+@media screen and (max-width: 640px) {
   .menu {
     font-family: Montserrat-bold;
-    @apply transition-all p-5  gap-2 top-16 w-full h-screen items-start justify-start flex-col absolute bg-slate-800;
+    @apply absolute left-0 transition-all p-5  gap-2 top-16 w-full h-screen items-start justify-start flex-col bg-slate-800;
   }
   .menu-content {
     flex-direction: column;
     gap: 10px;
-  }
-  .menu-item {
-  }
-
-  .shop-button:hover {
-    width: 250px;
   }
 
   .close_menu {

@@ -54,10 +54,6 @@ section {
   transition: all 0.2s;
   cursor: pointer;
 }
-.add-to-cart:hover {
-  background-color: var(--primary);
-  color: #ffffff;
-}
 
 .product-image {
   display: flex;
