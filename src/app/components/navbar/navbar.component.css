@@ -1,103 +1,30 @@
-nav {
-  height: 70px;
-  width: 100%;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
-  position: relative;
-  max-width: 1024px;
-  padding-right: 10px;
-}
 nav p {
-  font-size: 20px;
-  font-weight: bold;
   font-family: Montserrat-bold;
-  padding: 0 10px;
-}
-nav p span {
-  color: orange;
 }
 
-.menu {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  max-width: 400px;
-  gap: 15px;
-}
-
-.shop-button {
-  width: 80px;
-  border: none;
-  background-color: blue;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-.menu-content {
-  display: flex;
-  width: 100%;
-  list-style: none;
-  justify-content: space-around;
-  gap: 8px;
-}
 .menu-item {
   cursor: pointer;
 }
-.menu-btn {
-  display: none;
-}
+
 @media screen and (max-width: 600px) {
+  nav {
+    padding: 0;
+  }
   .menu {
-    position: absolute;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    height: 100vh;
-    width: 100%;
-    top: 70px;
-    gap: 10px;
-    background-color: black;
-    padding-top: 20px;
-    transition: all 0.5s;
     font-family: Montserrat-bold;
+    @apply transition-all p-5  gap-2 top-16 w-full h-screen items-start justify-start flex-col absolute bg-slate-800;
   }
   .menu-content {
     flex-direction: column;
     gap: 10px;
   }
   .menu-item {
-    padding: 10px;
-    background-color: orange;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: 120px;
-    transition: all 0.5s;
-    cursor: pointer;
   }
 
   .shop-button:hover {
     width: 250px;
   }
-  .menu-item:hover {
-    width: 250px;
-  }
-  .shop-button {
-    transition: all 0.5s;
-    padding: 10px;
-    cursor: pointer;
-    background-color: blue;
-    border-radius: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: 120px;
-    text-align: left;
-    font-family: Montserrat-bold;
-    font-size: 16px;
-  }
+
   .close_menu {
     transform: translateX(-110%);
   }
@@ -111,11 +38,6 @@ nav p span {
     display: none;
   }
   .menu-btn {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    right: 5px;
-    border: none;
-    background-color: black;
+    @apply bg-black border-none right-1 absolute w-10 h-10;
   }
 }

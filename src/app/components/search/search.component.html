@@ -1,0 +1,31 @@
+<article class="flex justify-center mt-5 p-2">
+  <div class="w-full max-w-2xl rounded-2xl bg-white overflow-hidden p-2">
+    <form class="flex w-full" (submit)="handleSearch($event)">
+      <input
+        #searchField
+        (change)="value.set(searchField.value)"
+        (input)="handleInput(searchField.value)"
+        type="search"
+        placeholder="search..."
+        class="p-4 rounded-l-xl w-full border-none outline-none text-black bg-slate-100"
+      />
+      <input
+        type="submit"
+        value="search"
+        class="p-4 h-full bg-orange-500 rounded-r-xl font-semibold hover:bg-orange-600 transition-colors cursor-pointer"
+      />
+    </form>
+    <div class="w-full">
+      <ul class="text-black flex flex-col gap-3 pt-3" *ngIf="results().length">
+        @for (item of results(); track $index) {
+        <li
+          class="border-2 border-solid border-slate-300 p-2 rounded-xl shadow-sm hover:shadow-md transition-shadow hover:cursor-pointer"
+          [routerLink]="'/shop/' + item.id"
+        >
+          {{ item.title }}
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</article>
