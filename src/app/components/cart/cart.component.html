@@ -1,21 +1,23 @@
-<div class="w-full min-h-full bg-white p-4 flex flex-col gap-5 text-black">
+<div class="w-full min-h-full bg-white px-4 flex flex-col gap-5 text-black">
   <div class="w-full hidden max-lg:block">
     <button (click)="handleClose()">X</button>
   </div>
   <div class="w-full flex flex-col gap-5">
-    <p class="text-3xl font-bold">Shopping Bag</p>
+    <p class="text-xl font-bold text-gray-700">Shopping Bag</p>
     <button
-      class="rounded-lg font-bold text-2xl bg-black text-white border-none p-4"
+      class="rounded-lg font-bold text-sm border border-black border-solid text-gray-800 p-2 h-12 shadow-sm hover:shadow"
     >
       Checkout
     </button>
-    <button class="rounded-lg font-bold text-2xl bg-orange-500 text-black p-4">
+    <button
+      class="rounded-lg font-bold text-sm border border-black border-solid text-gray-800 p-2 h-12 shadow-sm hover:shadow"
+    >
       Pay with Card
     </button>
   </div>
   <div class="flex flex-col gap-1">
-    <p class="text-lg">Sending from United States</p>
-    <p class="text-lg">You don't need to pay import duties</p>
+    <p class="font-light text-sm">Sending from United States</p>
+    <p class="font-light text-sm">You don't need to pay import duties</p>
   </div>
 
   <div class="flex flex-col gap-4">

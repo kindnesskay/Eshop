@@ -1,4 +1,4 @@
-<section class="gap-4 grid grid-cols-3">
+<section class="gap-4 grid grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2">
   @for (product of productsArray; track $index) {
   <app-product-card [product]="product"></app-product-card>
   }

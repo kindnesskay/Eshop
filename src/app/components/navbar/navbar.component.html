@@ -1,17 +1,17 @@
 <header class="w-screen flex justify-center fixed h-16 z-20">
   <nav
-    class="h-16 w-full max-w-7xl flex justify-between items-center relative px-4 bg-slate-800 text-white"
+    class="h-16 w-full max-w-7xl flex justify-between items-center relative bg-slate-800 text-white px-8 max-sm:px-2"
   >
     <div class="flex pl-2 items-center gap-4">
       <button
-        class="w-12 h-12 hidden"
+        class="w-8 h-8 hidden"
         [ngClass]="display ? 'hide-btn' : 'show-btn'"
         (click)="openMenu()"
       >
         <img [src]="menu_open_icon" alt="menu" />
       </button>
       <p routerLink="" class="cursor-pointer max-sm:text-lg text-xl font-bold">
-        Sports <span class="text-orange-500">Apparel</span>
+        S<span class="text-orange-500">App</span>
       </p>
     </div>
     <div
@@ -30,16 +30,33 @@
 
       <div>
         <ul class="flex gap-4 list-none max-sm:flex-col">
-          <li class="menu-item" (click)="closeMenu()" routerLink="">Home</li>
-          <li class="menu-item" (click)="closeMenu()" routerLink="">About</li>
-          <li class="menu-item" (click)="closeMenu()">Categories</li>
+          <li class="menu-item" (click)="closeMenu()" routerLink="">
+            Home
+            <span
+              class="w-full h-1 transition-colors bg-slate-800 hover:bg-orange-500"
+            ></span>
+          </li>
+          <li class="menu-item" (click)="closeMenu()" routerLink="">
+            About
+            <span
+              class="w-full h-1 transition-colors bg-slate-800 hover:bg-orange-500"
+            ></span>
+          </li>
+          <li class="menu-item" (click)="closeMenu()">
+            Categories<span
+              class="w-full h-1 transition-colors bg-slate-800 hover:bg-orange-500"
+            ></span>
+          </li>
           <li class="menu-item" (click)="closeMenu()" routerLink="shop">
             Shop
+            <span
+              class="w-full h-1 transition-colors bg-slate-800 hover:bg-orange-500"
+            ></span>
           </li>
         </ul>
       </div>
     </div>
-    <button class="p-4 w-fit" (click)="handleOpenPannel()">
+    <button class="p-4 w-fit max-[240px]:hidden" (click)="handleOpenPannel()">
       Cart
       <span class="bg-orange-500 font-bold p-1 rounded-2xl">
         {{ cartService.cartTotal() }}
